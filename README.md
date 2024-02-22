@@ -1,8 +1,62 @@
-# React + Vite
+# Шаблон React приложения, Vite как инструмент сборки
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Вот подробное описание каждой части структуры и выбранных зависимостей:
 
-Currently, two official plugins are available:
+## Структура папок:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```javascript
+app/
+├── src/
+│   ├── app/
+│   │   ├── App.jsx
+│   │   └── App.module.scss
+│   ├── assets/
+│   │   ├── icons/
+│   │   └── images/
+│   ├── components/
+│   │   ├── common/
+│   │   ├── layout/
+│   │   └── index.js
+│   ├── context/
+│   │   └── index.js
+│   ├── helpers/
+│   │   └── index.js
+│   ├── hooks/
+│   │   └── index.js
+│   ├── pages/
+│   │   └── index.js
+│   ├── routes/
+│   │   └── index.js
+│   ├── services/
+│   │   ├── apiClient.js
+└── main.jsx
+```
+
+-   **`app/src/`**: Корень исходного кода моего приложения.
+    -   **`app/`**: Содержит главный компонент приложения `App.jsx` и его стили `App.module.scss`, используя CSS модули для изоляции стилей.
+    -   **`assets/`**: Для хранения статических ресурсов. Включает в себя папки `icons/` для иконок и `images/` для изображений.
+    -   **`components/`**: Папка для React компонентов. Разделена на `common/` для общих компонентов, `layout/` для компоновочных элементов и `index.js` для экспорта компонентов.
+    -   **`context/`**: React Context для управления глобальным состоянием приложения, `index.js` служит точкой сборки контекстов.
+    -   **`helpers/`**: Содержит вспомогательные функции и утилиты в `index.js`.
+    -   **`hooks/`**: Папка для пользовательских хуков React, с `index.js` для их экспорта.
+    -   **`pages/`**: Содержит компоненты страниц, которые соответствуют различным маршрутам в приложении, `index.js` экспортирует их.
+    -   **`routes/`**: Определяет маршрутизацию приложения с использованием `react-router-dom`, `index.js` объединяет все маршруты.
+    -   **`services/`**: Для работы с внешними API, включает `apiClient.js`, который обычно использует `axios` для HTTP запросов.
+
+## Зависимости:
+
+Зависимости ставятся через `pnpm`.
+
+-   **`axios`**: Для упрощения HTTP запросов к API.
+-   **`date-fns`**: Для работы с датами.
+-   **`react` и `react-dom`**: Основа для разработки на React.
+-   **`react-router-dom`**: Для организации навигации в приложении.
+-   **`uuid`**: Для генерации уникальных идентификаторов, когда это необходимо.
+
+## DevDependencies:
+
+-   **`@types/react` и `@types/react-dom`**: Типы TypeScript для React, для обеспечения типизации при разработке.
+-   **`@vitejs/plugin-react`**: Плагин, интегрирующий React с Vite.
+-   **`eslint` и его плагины**: Для обеспечения качества кода и соблюдения лучших практик разработки на React.
+-   **`sass`**: Позволяет использовать SASS/SCSS для стилей, предоставляя расширенные возможности по сравнению с обычным CSS.
+-   **`vite`**: Vite - быстрота и простота настройки в качестве инструмента сборки для разработки и продакшена.
