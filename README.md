@@ -1,8 +1,8 @@
-# Шаблон React приложения, Vite как инструмент сборки
+# React Application Template with Vite as the Build Tool
 
-Вот подробное описание каждой части структуры и выбранных зависимостей:
+Here's a detailed description of each part of the structure and the chosen dependencies:
 
-## Структура папок:
+## Folder Structure:
 
 ```javascript
 app/
@@ -32,31 +32,31 @@ app/
 └── main.jsx
 ```
 
--   **`app/src/`**: Корень исходного кода моего приложения.
-    -   **`app/`**: Содержит главный компонент приложения `App.jsx` и его стили `App.module.scss`, используя CSS модули для изоляции стилей.
-    -   **`assets/`**: Для хранения статических ресурсов. Включает в себя папки `icons/` для иконок и `images/` для изображений.
-    -   **`components/`**: Папка для React компонентов. Разделена на `common/` для общих компонентов, `layout/` для компоновочных элементов и `index.js` для экспорта компонентов.
-    -   **`context/`**: React Context для управления глобальным состоянием приложения, `index.js` служит точкой сборки контекстов.
-    -   **`helpers/`**: Содержит вспомогательные функции и утилиты в `index.js`.
-    -   **`hooks/`**: Папка для пользовательских хуков React, с `index.js` для их экспорта.
-    -   **`pages/`**: Содержит компоненты страниц, которые соответствуют различным маршрутам в приложении, `index.js` экспортирует их.
-    -   **`routes/`**: Определяет маршрутизацию приложения с использованием `react-router-dom`, `index.js` объединяет все маршруты.
-    -   **`services/`**: Для работы с внешними API, включает `apiClient.js`, который обычно использует `axios` для HTTP запросов.
+-   **`app/src/`**: The root of my application's source code.
+    -   **`app/`**: Contains the main application component `App.jsx` and its styles `App.module.scss`, using CSS modules for style isolation.
+    -   **`assets/`**: For storing static resources. Includes `icons/` for icons and `images/` for images.
+    -   **`components/`**: Folder for React components. Divided into `common/` for shared components, `layout/` for layout components, and `index.js` for exporting components.
+    -   **`context/`**: Uses React Context to manage global application state, with `index.js` serving as the aggregation point for contexts.
+    -   **`helpers/`**: Contains helper functions and utilities in `index.js`.
+    -   **`hooks/`**: Folder for custom React hooks, with `index.js` for their export.
+    -   **`pages/`**: Contains page components that correspond to different routes in the application, with `index.js` exporting them.
+    -   **`routes/`**: Defines application routing using `react-router-dom`, with `index.js` aggregating all routes.
+    -   **`services/`**: For working with external APIs, includes `apiClient.js`, which typically uses `axios` for HTTP requests.
 
-## Зависимости:
+## Dependencies:
 
-Зависимости ставятся через `pnpm`.
+Dependencies are installed using `pnpm`.
 
--   **`axios`**: Для упрощения HTTP запросов к API.
--   **`date-fns`**: Для работы с датами.
--   **`react` и `react-dom`**: Основа для разработки на React.
--   **`react-router-dom`**: Для организации навигации в приложении.
--   **`uuid`**: Для генерации уникальных идентификаторов, когда это необходимо.
+-   **`axios`**: For simplifying HTTP requests to APIs.
+-   **`date-fns`**: For working with dates.
+-   **`react` and `react-dom`**: The foundation for developing with React.
+-   **`react-router-dom`**: For organizing navigation within the application.
+-   **`uuid`**: For generating unique identifiers when necessary.
 
 ## DevDependencies:
 
--   **`@types/react` и `@types/react-dom`**: Типы TypeScript для React, для обеспечения типизации при разработке.
--   **`@vitejs/plugin-react`**: Плагин, интегрирующий React с Vite.
--   **`eslint` и его плагины**: Для обеспечения качества кода и соблюдения лучших практик разработки на React.
--   **`sass`**: Позволяет использовать SASS/SCSS для стилей, предоставляя расширенные возможности по сравнению с обычным CSS.
--   **`vite`**: Vite - быстрота и простота настройки в качестве инструмента сборки для разработки и продакшена.
+-   **`@types/react` and `@types/react-dom`**: TypeScript types for React, to ensure typing during development.
+-   **`@vitejs/plugin-react`**: A plugin that integrates React with Vite.
+-   **`eslint` and its plugins**: To ensure code quality and adherence to best practices for React development.
+-   **`sass`**: Allows the use of SASS/SCSS for styles, providing enhanced capabilities compared to plain CSS.
+-   **`vite`**: Chosen for its speed and ease of setup as a build tool for both development and production.
